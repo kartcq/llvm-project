@@ -86,7 +86,7 @@ template <typename ISLTy, typename ISL_CTX_GETTER, typename ISL_PRINTER>
 static inline std::string stringFromIslObjInternal(__isl_keep ISLTy *isl_obj,
                                                    ISL_CTX_GETTER ctx_getter_fn,
                                                    ISL_PRINTER printer_fn,
-                                                   std::string DefaultValue) {
+                                                   const std::string &DefaultValue) {
   if (!isl_obj)
     return DefaultValue;
   isl_ctx *ctx = ctx_getter_fn(isl_obj);
